@@ -14,6 +14,7 @@ import ReactNative, {
 import CreditCard from "./CardView";
 import CCInput from "./CCInput";
 import { InjectedProps } from "./connectToState";
+import {I18n} from "../../../language/I18n";
 
 const s = StyleSheet.create({
   container: {
@@ -70,27 +71,27 @@ export default class CreditCardInput extends Component {
   static defaultProps = {
     cardViewSize: {},
     labels: {
-      name: "CARDHOLDER'S NAME",
-      number: "CARD NUMBER",
-      expiry: "EXPIRY",
-      cvc: "CVC/CCV",
-      postalCode: "POSTAL CODE",
+      name: I18n.t('creditCardInput.nameLabel'),
+      number: I18n.t('creditCardInput.numberLabel'),
+      expiry: I18n.t('creditCardInput.expiryLabel'),
+      cvc: I18n.t('creditCardInput.cvcLabel'),
+      postalCode: I18n.t('creditCardInput.postalCodeLabel'),
     },
     placeholders: {
-      name: "Full Name",
-      number: "1234 5678 1234 5678",
-      expiry: "MM/YY",
-      cvc: "CVC",
-      postalCode: "34567",
+      name: I18n.t('creditCardInput.namePlaceholder'),
+      number: I18n.t('creditCardInput.numberPlaceholder'),
+      expiry: I18n.t('creditCardInput.expiryPlaceholder'),
+      cvc: I18n.t('creditCardInput.cvcPlaceholder'),
+      postalCode: I18n.t('creditCardInput.postalCodePlaceholder'),
     },
     inputContainerStyle: {
       borderBottomWidth: 1,
       borderBottomColor: "black",
     },
-    validColor: "",
+    validColor: "green",
     invalidColor: "red",
     placeholderColor: "gray",
-    allowScroll: false,
+    allowScroll: true,
     additionalInputsProps: {},
   };
 
